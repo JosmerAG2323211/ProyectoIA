@@ -19,10 +19,15 @@ COPY . /var/www/html/
 # 5. CORRECCIÓN DEL FORBIDDEN: Asegurar permisos de lectura (755) y dueño (www-data)
 RUN chmod -R 755 /var/www/html && chown -R www-data:www-data /var/www/html
 
-# 6. Configurar el entorno virtual de Python e instalar librerías para la IA
+# Instalar las librerías de Python indispensables para tu IA (Groq y PyPDF)
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 RUN pip install --no-cache-dir groq pypdf
 
-# 7. Exponer el puerto por defecto de Render
+# 🚀 AGREGA ESTAS LÍNEAS AQUÍ PARA SUBIR EL LÍMITE DE ARCHIVOS A 100 MEGABYTES
+RUN echo "upload_max_filesize = 100M" > /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "post_max_size = 100M" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini
+
+# Exponer el puerto por defecto de Render
 EXPOSE 80
