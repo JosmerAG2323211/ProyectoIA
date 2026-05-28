@@ -1,10 +1,10 @@
 <?php
 // config/conexion.php
 
-$host = $_ENV['MYSQLHOST'] ?? 'localhost';
-$db   = $_ENV['MYSQLDATABASE'] ?? 'db_mantenimiento_ia';
-$user = $_ENV['MYSQLUSER'] ?? 'root';
-$pass = $_ENV['MYSQLPASSWORD'] ?? 'Admin_TechDB*2026';
+$host = $_ENV['MYSQLHOST'] ?? 'bxcfmutsnd6r952jjuzb-mysql.services.clever-cloud.com';
+$db   = $_ENV['MYSQLDATABASE'] ?? 'bxcfmutsnd6r952jjuzb';
+$user = $_ENV['MYSQLUSER'] ?? 'uaax0kegurbcatz1';
+$pass = $_ENV['MYSQLPASSWORD'] ?? 'Qk2v0FWf7POXwlOkczHP';
 $port = $_ENV['MYSQLPORT'] ?? '3306';
 $charset = 'utf8mb4';
 
