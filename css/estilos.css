@@ -1,0 +1,55 @@
+/* 1. Modo oscuro nativo (esto evita que el navegador se vuelva loco con fondos blancos) */
+:root {
+    color-scheme: dark;
+}
+
+/* 2. Solución quirúrgica: eliminar la capa oscura en la tabla */
+/* Esto quita el oscurecimiento al pasar el mouse por las filas */
+.table.is-hoverable tbody tr:hover {
+    background-color: transparent !important;
+}
+
+/* 3. Asegurar que el fondo general se mantenga oscuro */
+body {
+    background-color: #070a13 !important;
+}
+
+
+
+/* --- NUEVA TIPOGRAFÍA Y ESTILO DE TABLA --- */
+
+body {
+    font-family: 'Inter', sans-serif !important; /* Aplicamos Inter a todo */
+    background-color: #070a13 !important;
+}
+
+.table {
+    background-color: transparent !important;
+    color: #f1f5f9 !important;
+    border-collapse: separate; /* Esto permite redondear los bordes si quieres */
+    border-spacing: 0 5px;    /* Espacio sutil entre filas */
+}
+
+/* Encabezados de tabla tipo "Data Center" */
+.table thead th {
+    color: #94a3b8 !important; /* Un gris azulado, más elegante que el blanco puro */
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important; /* Separa las letras para un look tecnológico */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 1rem 0.75rem !important;
+}
+
+/* Filas de la tabla */
+.table td {
+    padding: 1rem 0.75rem !important;
+    border: none !important; /* Limpiamos las líneas divisorias */
+    font-size: 0.9rem !important;
+    font-weight: 400 !important;
+}
+
+/* Efecto hover: Sutilmente gris, nada de negro agresivo */
+.table.is-hoverable tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+}
