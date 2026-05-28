@@ -1,11 +1,10 @@
 FROM php:8.2-apache
 
-# Instalar extensiones de PHP necesarias para MySQL y utilidades del sistema
+# Instalar utilidades del sistema y extensiones de PHP necesarias para MySQL e IA
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     python3-venv \
-    libjpeg-dev \
     && docker-php-ext-install pdo pdo_mysql
 
 # Habilitar el módulo de reescritura de Apache
